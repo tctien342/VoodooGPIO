@@ -794,7 +794,7 @@ void VoodooGPIO::intel_gpio_community_irq_handler(struct intel_community *commun
                     handler(owner, refcon, this, pin);
                     if (*firstdelay) {
                         *firstdelay = false;
-                        IODelay(25 * nInactiveCommunities);  // Reduce CPU load. 25~30us per inactive community was reasonable.
+                        IODelay(400 * nInactiveCommunities);  // Reduce CPU load. 25~30us per inactive community was reasonable.
                     }
                 }
                 
